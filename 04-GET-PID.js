@@ -2,7 +2,6 @@ var http = require('http');
 var url = require('url');
 var crypto = require("crypto");
 var port = process.env.PORT || 8081;
-var process = require('process');
 
 http.createServer(function (request, response) {
    // Send the HTTP header 
@@ -14,6 +13,7 @@ http.createServer(function (request, response) {
     var firstname =  queryData.fn;
     var lastname =  queryData.ln;
     var requestId = crypto.randomBytes(16).toString("hex");
+    var process = require('process');
 
     var headers = request.headers;
     var authorization = headers['authorization'];
